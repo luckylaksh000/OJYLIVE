@@ -3,7 +3,6 @@ package driverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import commonFunctions.FunctionLibrary;
 import utilities.ExcelFileUtil;
 
 public class DriverScript { 
