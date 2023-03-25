@@ -41,7 +41,7 @@ public class FunctionLibrary {
 	}
 	// 2) method for Open Application
 	public static void applicationUrl(WebDriver driver) throws Throwable {
-		driver.navigate().to(PropertyFileUtil.getValueForKey("Url"));
+		driver.get(PropertyFileUtil.getValueForKey("Url"));
 
 
 	}

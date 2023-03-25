@@ -19,16 +19,16 @@ public class ExcelFileUtil {
 	public ExcelFileUtil(String ExcelPath)throws Throwable {
 		FileInputStream fi= new FileInputStream(ExcelPath);
 		wb = WorkbookFactory.create(fi);
-		
-		
+
+
 	}
-	
+
 	//method for counting rows
 	public int rowCount(String sheetName) {
 		return wb.getSheet(sheetName).getLastRowNum();
-		
-		
-		
+
+
+
 	}
 	//Read CellData
 	public String getCellData(String sheetName,int row, int column)
@@ -38,7 +38,7 @@ public class ExcelFileUtil {
 		{
 			int celldata = (int) wb.getSheet(sheetName).getRow(row).getCell(column).getNumericCellValue();
 			data = String.valueOf(celldata);
-			
+
 		}
 		else
 		{
@@ -76,8 +76,8 @@ public class ExcelFileUtil {
 			rowNum.getCell(column).setCellStyle(style);
 
 		}
-			
-		
+
+
 		else if(status.equalsIgnoreCase("Blocked")) {
 			CellStyle style = wb.createCellStyle();
 			Font font = wb.createFont();
@@ -86,12 +86,12 @@ public class ExcelFileUtil {
 			font.setBoldweight(Font.BOLDWEIGHT_BOLD);
 			style.setFont(font);
 			rowNum.getCell(column).setCellStyle(style);
-	
-		
-	}
+
+
+		}
 		FileOutputStream fo = new FileOutputStream(writeExcel);
 		wb.write(fo);
-	
+
 	}
 
 }
